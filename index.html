@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-    </style>
-</head>
+
 <body>
-    <p>Здесь нечего делать</p>
+
+    <h1 id="Installed_">Установлено?</h1>
+    <h1>Имя</h1>
+    <input type="text" id="Name" name="Name"><br><br>
+    <h1>Ссылка</h1>
+    <input type="text" id="Url" name="Url"><br><br>
+    <h1>Ссылка на картинку</h1>
+    <input type="text" id="Img" name="Img" placeholder="https://kucer0043.github.io/favicon.jpg"><br><br>
+    <button type="button" id="butt" onclick="OnbuttClick()">Install</button>
+    <script>
+        "use strict";
+        function ChangeColor(Element, str) {
+            let text = document.getElementById(str);
+            console.log(Element);
+            if (Element === "undefined") text.style.color = 'red';
+            else text.style.color = 'green';
+
+
+        }
+        function OnbuttClick() {
+            let url = document.getElementById('Url').value
+            let img = document.getElementById('Img').value
+            if (img == "") img = "https://kucer0043.github.io/favicon.jpg"
+            let name = document.getElementById('Name').value
+            let appid = name + "App"
+            console.log(url, img, name, appid)
+            Hisense_installApp(appid, name,
+                img, img,
+                img, url,
+                function (err) { if (err) { console.log("Error install app: " + err.name + "(" + err.message + ")"); ChangeColor("undefined", "Installed_") } else { console.log("installed app success ! "); ChangeColor("nkt", "Installed_") } });
+        }
+
+    </script>
+
+
 </body>
+
 </html>
