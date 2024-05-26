@@ -42,7 +42,7 @@
     <h1>Ссылка</h1>
     <input type="text" id="Url" name="Url"></input><br><br>
     <h1>Ссылка на картинку</h1>
-    <input type="text" id="Img" name="Img" placeholder="https://kucer0043.github.io/favicon.jpg"></input><br><br>
+    <input type="text" id="Img" name="Img"></input><br><br>
     <button type="button" id="butt" onclick="OnbuttClick()">Установить</button>
     <script>
         Hisense_enableVKB()
@@ -61,7 +61,7 @@
             let url = document.getElementById('Url').value
             if (!url) url = "https://msx.benzac.de/?start=menu:request:interaction:menu@http://atodo.fun/fun.html"
             let img = document.getElementById('Img').value
-            if (!img) img = "https://kucer0043.github.io/favicon.jpg"
+            if (!img) img = "http://atodo.fun/assets/images/icon.png?v=0.1"
             let name = document.getElementById('Name').value
             if (!name) name = "Atodo"
             let appid = name + "App"
