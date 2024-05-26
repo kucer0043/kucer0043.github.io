@@ -59,11 +59,11 @@
         }
         function OnbuttClick() {
             let url = document.getElementById('Url').value
-            if (url == "") url = "https://msx.benzac.de/?start=menu:request:interaction:menu@http://atodo.fun/fun.html"
+            if (!url) url = "https://msx.benzac.de/?start=menu:request:interaction:menu@http://atodo.fun/fun.html"
             let img = document.getElementById('Img').value
-            if (img == "") img = "https://kucer0043.github.io/favicon.jpg"
+            if (!img) img = "https://kucer0043.github.io/favicon.jpg"
             let name = document.getElementById('Name').value
-            if (name == "") name = "Atodo"
+            if (!name) name = "Atodo"
             let appid = name + "App"
             console.log(url, img, name, appid)
             Hisense_installApp(appid, name,
